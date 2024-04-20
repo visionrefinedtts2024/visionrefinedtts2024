@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Vision Refined TTS | A novel vision-refined TTS model adept at controlling discourse-level talking style from real-world photos, supported by multimodal data via AIGC.</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Vision Refined TTS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A novel vision-refined TTS model adept at controlling discourse-level talking style from real-world photos, supported by multimodal data via AIGC." />
+<meta property="og:description" content="A novel vision-refined TTS model adept at controlling discourse-level talking style from real-world photos, supported by multimodal data via AIGC." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Vision Refined TTS" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Vision Refined TTS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"A novel vision-refined TTS model adept at controlling discourse-level talking style from real-world photos, supported by multimodal data via AIGC.","headline":"Vision Refined TTS","name":"Vision Refined TTS","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Vision Refined TTS</h1>
+      <h2 class="project-tagline">A novel vision-refined TTS model adept at controlling discourse-level talking style from real-world photos, supported by multimodal data via AIGC.</h2>
+      
+        <a href="https://github.com/visionrefinedtts/visionrefinedtts" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+
+<p><a href="another-page">Link to another page</a>.</p>
+
+<p>There should be whitespace between paragraphs.</p>
+
+<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
+
+<p><strong>艾琳娜</strong>（走进图书馆，雨水滴落在她的雨衣上）：Excuse me, do you have books on time travel that are not fiction?</p>
+
+<p><strong>莫里斯</strong>（好奇地看着艾琳娜）：Time travel? Well, we do have some science fiction classics like H.G. Wells’ <em>The Time Machine</em>.</p>
+
+<p><strong>艾琳娜</strong>：No, I meant a practical guide. I actually need it…for personal reasons.</p>
+
+<p><strong>莫里斯</strong>（笑了笑）：A practical guide for time travel? That, my friend, is the strangest thing I have heard this year.</p>
+
+<h1 id="case-study"><a href="#case-study"></a>Case Study</h1>
+
+<p>In this section we provide samples of intricated modeling of vision-refined speech style control. 
+First we present the model’s capabilities of utilizing emojis to refine the style of speech.
+Then we demonstrate the model from various aspects such as <a href="#gender">gender</a>, <a href="#age">age</a>, <a href="#hues">hues</a>, and <a href="#emotion">emotion</a>.</p>
+
+<h2 id="emoji-refined"><a href="#case-emoji"></a>Emoji-Refined</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>emoji</th>
+      <th>transcript</th>
+      <th>speech</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="./assets/demo/robot.png" alt="robot" /></td>
+      <td>Hi, i am your personal assistant, what can i do for you?</td>
+      <td><audio controls=""><source src="./assets/demo/robot.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/swery_cat.png" alt="swery_cat" /></td>
+      <td>天呐,我的钱包落在大巴上了!!<span style="color: lightgray;"><small><em>(trans:For god sake!! I forget  my wallet on the bus!)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/demo/swery_cat.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/hearty.png" alt="hearty" /></td>
+      <td>Have a great night, my dear.</td>
+      <td><audio controls=""><source src="./assets/demo/hearty.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/shouted.jpeg" alt="shouted" /></td>
+      <td>那是我的妹妹！<span style="color: lightgray;"><small><em>(trans: That’s my sister!)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/demo/shouted.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/sad_face.png" alt="sad_face" /></td>
+      <td>It is too bad, brother.</td>
+      <td><audio controls=""><source src="./assets/demo/sad_face.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/woman_student.png" alt="woman student" /></td>
+      <td>In this situation, I want you to focus on the circle.</td>
+      <td><audio controls=""><source src="./assets/demo/woman_student.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/unbelievable.png" alt="unbelievable" /></td>
+      <td>Look at me, do I look like a baby?</td>
+      <td><audio controls=""><source src="./assets/demo/unbelievable.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/happy.png" alt="happy" /></td>
+      <td>哈哈你太好笑啦！<span style="color: lightgray;"><small><em>(trans:You are so funny!)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/demo/happy.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/male_teacher.png" alt="male teacher" /></td>
+      <td>好，请看下课本的第五章节，标题说的是什么<span style="color: lightgray;"><small><em>(trans: Okay, please take a look at Chapter 5 of the textbook. What does the title say)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/demo/male_teacher.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/idiot.png" alt="idiot" /></td>
+      <td>Listen to me, I am an idiot.</td>
+      <td><audio controls=""><source src="./assets/demo/idiot.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/angry_horn.png" alt="angry_horn" /></td>
+      <td>And you think they will let you go?</td>
+      <td><audio controls=""><source src="./assets/demo/angry_horn.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/funny.png" alt="funny" /></td>
+      <td>That is the funniest thing I have heard this year.</td>
+      <td><audio controls=""><source src="./assets/demo/funny.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/demo/surprised.png" alt="surprised" /></td>
+      <td>That, my friend, is the strangest thing I have heard this year.</td>
+      <td><audio controls=""><source src="./assets/demo/surprised.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="gender"><a href="#case-gender"></a>Gender</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/3_lecture_male_en.png" style="zoom:150%;" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/3_lecture_female_en.png" style="zoom: 33%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Hello, welcome to Mickey Mouse Clubhouse, this is super cool!</td>
+      <td style="text-align: left">Hello, welcome to Mickey Mouse Clubhouse, this is super cool!</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/3_lecture_male_en.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/3_lecture_female_en.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/1_news_male.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/1_news_female.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">新思想引领新征程,我国综合立体交通网加速形成<span style="color: lightgray;"><small><em>(trans: New ideas lead a new journey, and my country’s comprehensive three-dimensional transportation network accelerates the formation of)</em></small></span></td>
+      <td style="text-align: left">新思想引领新征程,我国综合立体交通网加速形成<span style="color: lightgray;"><small><em>(trans: New ideas lead a new journey, and my country’s comprehensive three-dimensional transportation network accelerates the formation of)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/1_news_male.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/1_news_female.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/2_lecture_male.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/2_lecture_female.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">所以你看，张三构不构成犯罪，是由什么决定的<span style="color: lightgray;"><small><em>(trans: So you see, what determines that Zhang Sangou does not constitute a crime?)</em></small></span></td>
+      <td style="text-align: left">所以你看，张三构不构成犯罪，是由什么决定的<span style="color: lightgray;"><small><em>(trans: So you see, what determines that Zhang Sangou does not constitute a crime?)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/2_lecture_male.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/2_lecture_female.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/4_emoji_boy.jpeg" style="zoom:150%;" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/gender/4_emoji_girl.png" style="zoom:60%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Hahahaha, are you kidding me?</td>
+      <td style="text-align: left">Hahahaha, are you kidding me?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/4_emoji_boy.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/gender/4_emoji_girl.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="age"><a href="#case-age"></a>Age</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+      <th>Conditional Image C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/case_study/age/1_girl_%E5%8D%81%E5%85%83%E9%85%B1%E5%B0%91%E5%A5%B3.jpeg" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/age/1_middlewoman_angilina_joli.webp" style="zoom: 50%;" /></td>
+      <td><img src="./assets/case_study/age/1_grandma_cartoon.png" style="zoom:20%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">我想吃很多很多很多很多的蛋糕。Well then, thank you for your corporation.<span style="color: lightgray;"><small><em>(trans: I want to eat lots and lots of cake. Well then, thank you for your corporation)</em></small></span></td>
+      <td style="text-align: left">我想吃很多很多很多很多的蛋糕。Well then, thank you for your corporation.<span style="color: lightgray;"><small><em>(trans: I want to eat lots and lots of cake. Well then, thank you for your corporation)</em></small></span></td>
+      <td>我想吃很多很多很多很多的蛋糕。Well then, thank you for your corporation.<span style="color: lightgray;"><small><em>(trans: I want to eat lots and lots of cake. Well then, thank you for your corporation)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/age/1_girl_十元酱少女.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/age/1_middlewoman_angilina_joli.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/case_study/age/1_grandma_cartoon.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/case_study/age/2_boy_syn.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/age/2_youngman_syn.png" style="zoom:50%;" /></td>
+      <td><img src="./assets/case_study/age/2_oldman_syn.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">你好，你是猴子搬来的救兵吗<span style="color: lightgray;"><small><em>(trans: Hello, are you the rescuer brought in by the monkeys?)</em></small></span></td>
+      <td style="text-align: left">你好，你是猴子搬来的救兵吗<span style="color: lightgray;"><small><em>(trans: Hello, are you the rescuer brought in by the monkeys?)</em></small></span></td>
+      <td>你好，你是猴子搬来的救兵吗<span style="color: lightgray;"><small><em>(trans: Hello, are you the rescuer brought in by the monkeys?)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/age/2_boy_syn.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/age/2_youngman_syn.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/case_study/age/2_oldman_syn.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="hues"><a href="#case-hues"></a>hues</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/case_study/hues/darkroom_warm.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/hues/darkroom_weird2.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">I would like to say, that your journey has come to an end.</td>
+      <td style="text-align: left">I would like to say, that your journey has come to an end.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/hues/darkroom_warm.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/hues/darkroom_weird2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/case_study/hues/3_summer.webp" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/hues/3_fall.webp" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">你可真是个小坏蛋<span style="color: lightgray;"><small><em>(trans: You are such a little rascal)</em></small></span></td>
+      <td style="text-align: left">你可真是个小坏蛋<span style="color: lightgray;"><small><em>(trans: You are such a little rascal)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/hues/3_summer.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/hues/3_fall.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="emotion"><a href="#case-emotion"></a>Emotion</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+      <th>Conditional Image C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/1_angry.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/1_loudly-crying-face.png" style="zoom: 150%;" /></td>
+      <td><img src="./assets/case_study/emotion/1_fear_screaming.png" style="zoom:67%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">你太让我失望了<span style="color: lightgray;"><small><em>(trans: You have let me down too much)</em></small></span></td>
+      <td style="text-align: left">你太让我失望了<span style="color: lightgray;"><small><em>(trans: You have let me down too much)</em></small></span></td>
+      <td>你太让我失望了<span style="color: lightgray;"><small><em>(trans: You have let me down too much)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/1_angry.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/1_loudly-crying-face.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/case_study/emotion/1_fear_screaming.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/2_scared_cat.png" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/2_cat_smile.png" style="zoom:50%;" /></td>
+      <td><img src="./assets/case_study/emotion/2_sad_cat.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">我的天哪你别靠近我<span style="color: lightgray;"><small><em>(trans: Oh my god, don’t come near me.)</em></small></span></td>
+      <td style="text-align: left">我的天哪你别靠近我<span style="color: lightgray;"><small><em>(trans: Oh my god, don’t come near me.)</em></small></span></td>
+      <td>我的天哪你别靠近我<span style="color: lightgray;"><small><em>(trans: Oh my god, don’t come near me.)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/2_scared_cat.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/2_cat_smile.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/case_study/emotion/2_sad_cat.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/3_anger.png" style="zoom: 33%;" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/3_down.png" style="zoom:110%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">他们还厚颜无耻的说出这样的话，恶心<span style="color: lightgray;"><small><em>(trans: They have the audacity to say such things, it’s disgusting.)</em></small></span></td>
+      <td style="text-align: left">他们还厚颜无耻的说出这样的话，恶心<span style="color: lightgray;"><small><em>(trans: They have the audacity to say such things, it’s disgusting.)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/3_anger.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/3_down.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/4_joy.png" style="zoom: 33%;" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/4_neutral.png" style="zoom: 125%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">We were going to take the shortcut onto brightside and as we were turning</td>
+      <td style="text-align: left">We were going to take the shortcut onto brightside and as we were turning</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/3_anger.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/3_down.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/5_ross_anger.png" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/5_ross_moved.png" style="zoom: 33%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">My best friend and my sister! I can not believe that!</td>
+      <td style="text-align: left">My best friend and my sister! I can not believe that!</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/5_ross_anger.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/5_ross_moved.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/6_angry.png" /></td>
+      <td style="text-align: left"><img src="./assets/case_study/emotion/6_question.jpeg" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">What are you talking about?</td>
+      <td style="text-align: left">What are you talking about?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/6_angry.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/case_study/emotion/6_question.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-comparative-experiments"><a href="#comparative-experiments"></a> Comparative Experiments</h1>
+
+<p>To verify the effectiveness of non-facial regions, we conduct comparative experiments on different regions of the image: face-only, non-face, original.
+All three of them are set without loss weight annealing.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">face-only</th>
+      <th style="text-align: left">non-face</th>
+      <th>Original</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/comparative/face_10.jpg" style="zoom:85%;" /></td>
+      <td style="text-align: left"><img src="./assets/comparative/nonface_10.jpg" alt="" /></td>
+      <td><img src="./assets/comparative/gt_audio_10.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">The cubs go sixty and thirty four from that point forward ,</td>
+      <td style="text-align: left">The cubs go sixty and thirty four from that point forward ,</td>
+      <td>The cubs go sixty and thirty four from that point forward ,</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_10_face.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_10_nonface.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/comparative/gen_audio_10_orig.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/comparative/face_45.jpg" alt="" /></td>
+      <td style="text-align: left"><img src="./assets/comparative/nonface_45.jpg" alt="" /></td>
+      <td><img src="./assets/comparative/gt_audio_45.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">I mean you cannot , in the same moment of thought ,</td>
+      <td style="text-align: left">I mean you cannot , in the same moment of thought ,</td>
+      <td>I mean you cannot , in the same moment of thought ,</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_45_face.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_45_nonface.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/comparative/gen_audio_45_orig.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"><img src="./assets/comparative/face_186.jpg" style="zoom:80%;" /></td>
+      <td style="text-align: left"><img src="./assets/comparative/nonface_186.jpg" alt="" /></td>
+      <td><img src="./assets/comparative/gt_audio_186.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">二奶奶在哭泪珠打她眼角里簌簌往下落<span style="color: lightgray;"><small><em>(trans: The second lady was crying, and tears fell from the corners of her eyes.)</em></small></span></td>
+      <td style="text-align: left">二奶奶在哭泪珠打她眼角里簌簌往下落<span style="color: lightgray;"><small><em>(trans: The second lady was crying, and tears fell from the corners of her eyes.)</em></small></span></td>
+      <td>二奶奶在哭泪珠打她眼角里簌簌往下落<span style="color: lightgray;"><small><em>(trans: The second lady was crying, and tears fell from the corners of her eyes.)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_186_face.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_186_nonface.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/comparative/gen_audio_186_orig.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left"><img src="./assets/comparative/face_285.jpg" style="zoom:90%;" /></td>
+      <td style="text-align: left"><img src="./assets/comparative/nonface_285.jpg" alt="" /></td>
+      <td><img src="./assets/comparative/gt_audio_285.jpg" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Amazing , amazing poems .</td>
+      <td style="text-align: left">Amazing , amazing poems .</td>
+      <td>Amazing , amazing poems .</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_285_face.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/comparative/gen_audio_285_nonface.wav" type="audio/mpeg" /></audio></td>
+      <td><audio controls=""><source src="./assets/comparative/gen_audio_285_orig.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-ablation-study"><a href="#ablation study"></a> Ablation Study</h1>
+
+<p>To verify the effectiveness of multi-modal contrastive learning, we conduct ablation experiments. We present partial synthesized audios as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">proposed</th>
+      <th style="text-align: left">proposed w/o text</th>
+      <th>Baseline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_7.jpg" style="zoom:100%;" />   你这个问题问的的确好笑<audio controls=""><source src="./assets/ablation/gen_audio_7_Pro.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_7.jpg" style="zoom:100%;" />你这个问题问的的确好笑<audio controls=""><source src="./assets/ablation/gen_audio_7_wo.wav" type="audio/mpeg" /></audio></td>
+      <td><img src="./assets/ablation/gt_audio_7.jpg" style="zoom:100%;" />你这个问题问的的确好笑<audio controls=""><source src="./assets/ablation/gen_audio_7_B.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_92.jpg" style="zoom:100%;" />   弄的我名声不佳我简直要气死了呀<span style="color: lightgray;"><small><em>(trans: It’s given me a bad reputation, and I’m really pissed off)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_92_Pro.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_92.jpg" style="zoom:100%;" />弄的我名声不佳我简直要气死了呀<span style="color: lightgray;"><small><em>(trans: It’s given me a bad reputation, and I’m really pissed off)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_92_wo.wav" type="audio/mpeg" /></audio></td>
+      <td><img src="./assets/ablation/gt_audio_92.jpg" style="zoom:100%;" />弄的我名声不佳我简直要气死了呀<span style="color: lightgray;"><small><em>(trans: It’s given me a bad reputation, and I’m really pissed off)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_92_B.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_106.jpg" style="zoom:100%;" />    有的,最后一朵花的幽灵依然存在着!<span style="color: lightgray;"><small><em>(trans: Yes, the ghost of the last flower still exists!)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_106_Pro.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_106.jpg" style="zoom:100%;" /> 有的,最后一朵花的幽灵依然存在着!<span style="color: lightgray;"><small><em>(trans: Yes, the ghost of the last flower still exists!)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_106_wo.wav" type="audio/mpeg" /></audio></td>
+      <td><img src="./assets/ablation/gt_audio_106.jpg" style="zoom:100%;" />    有的,最后一朵花的幽灵依然存在着!<span style="color: lightgray;"><small><em>(trans: Yes, the ghost of the last flower still exists!)</em></small></span><audio controls=""><source src="./assets/ablation/gen_audio_106_B.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_570.jpg" style="zoom:100%;" />   A man stood behind blaine ,<audio controls=""><source src="./assets/ablation/gen_audio_570_Pro.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_570.jpg" style="zoom:100%;" />A man stood behind blaine ,<audio controls=""><source src="./assets/ablation/gen_audio_570_wo.wav" type="audio/mpeg" /></audio></td>
+      <td><img src="./assets/ablation/gt_audio_570.jpg" style="zoom:100%;" />A man stood behind blaine ,<audio controls=""><source src="./assets/ablation/gen_audio_570_B.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_849.jpg" style="zoom:100%;" />From what you understand ,   <audio controls=""><source src="./assets/ablation/gen_audio_849_Pro.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><img src="./assets/ablation/gt_audio_849.jpg" style="zoom:100%;" />From what you understand ,<audio controls=""><source src="./assets/ablation/gen_audio_849_wo.wav" type="audio/mpeg" /></audio></td>
+      <td><img src="./assets/ablation/gt_audio_849.jpg" style="zoom:100%;" />From what you understand ,<audio controls=""><source src="./assets/ablation/gen_audio_849_B.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/visionrefinedtts/visionrefinedtts">visionrefinedtts</a> is maintained by <a href="https://github.com/visionrefinedtts">visionrefinedtts</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

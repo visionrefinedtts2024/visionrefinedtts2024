@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 <!--
-**visionrefinedtts2024/visionrefinedtts2024** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**visionrefinedtts/visionrefinedtts** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
