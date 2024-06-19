@@ -51,7 +51,7 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <p>Please open the demo webpage in Chrome for an enhanced experience.</p>
+      <p>Please open the demo webpage in Chrome for an enhanced experience. Headphones are recommended for better audio quality.</p>
 
 <h1 id="discourse-level-speech-style-control"><a href="#demo"></a>Discourse-level Speech Style Control</h1>
 
@@ -73,8 +73,142 @@
 <h1 id="case-study"><a href="#case-study"></a>Case Study</h1>
 
 <p>In this section we provide samples of intricated modeling of vision-refined speech style control. 
-First we present the model’s capabilities of utilizing emojis to refine the style of speech.
-Then we demonstrate the model from various aspects such as <a href="#gender">gender</a>, <a href="#age">age</a>, <a href="#hues">hues</a>, and <a href="#emotion">emotion</a>.</p>
+First we present the model’s capabilities of utilizing <a href="#out-of-domain">out-of-domain</a> photos and emojis to refine the style of speech.
+Then we demonstrate the model from various aspects such as <a href="#gender">gender</a>, <a href="#age">age</a>, <a href="#hues">hues</a>, and <a href="#emotion">emotion</a>.
+Finally, we present the results of <a href="#comparative-experiments">comparative experiments</a> and <a href="#ablation-study">ablation study</a>.</p>
+
+<h2 id="out-of-domain"><a href="#out-of-domain"></a>Out-of-Domain</h2>
+
+<p>In this section, we present the model’s capabilities of synthesizing speech refined by out-of-domain images.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">id</th>
+      <th style="text-align: left">Conditional Image A</th>
+      <th style="text-align: left">Conditional Image B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/I just got a call from the hospital about the test results.v1.png" style="zoom: 33%;" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/I just got a call from the hospital about the test results.v2.png" style="zoom:110%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">I just got a call from the hospital about the test results</td>
+      <td style="text-align: left">I just got a call from the hospital about the test results</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/I just got a call from the hospital about the test results.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/I just got a call from the hospital about the test results.v2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/Listen, I never expected it to turn out this way.v1.png" style="zoom: 33%;" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/Listen, I never expected it to turn out this way.v2.png" style="zoom: 125%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Listen, I never expected it to turn out this way.</td>
+      <td style="text-align: left">Listen, I never expected it to turn out this way.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/Listen, I never expected it to turn out this way.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/Listen, I never expected it to turn out this way.v2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/No matter the obstacles, we will always find a way to overcome them and reach our goals.v1.jpeg" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/No matter the obstacles, we will always find a way to overcome them and reach our goals.v2.jpeg" style="zoom: 33%;" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">No matter the obstacles, we will always find a way to overcome them and reach our goals.</td>
+      <td style="text-align: left">No matter the obstacles, we will always find a way to overcome them and reach our goals.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/No matter the obstacles, we will always find a way to overcome them and reach our goals.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/No matter the obstacles, we will always find a way to overcome them and reach our goals.v2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/This is exactly what I was talking about.-v1.jpeg" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/This is exactly what I was talking about.-v2.jpeg" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">This is exactly what I was talking about</td>
+      <td style="text-align: left">This is exactly what I was talking about</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/This is exactly what I was talking about.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/This is exactly what I was talking about.v2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/This is just the beginning of something great.v1.png" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/This is just the beginning of something great.v2.png" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">This is just the beginning of something great</td>
+      <td style="text-align: left">This is just the beginning of something great</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/This is just the beginning of something great.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/This is just the beginning of something great.v2.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/这些日子做了多少违背我良心的事.v1.jpeg" /></td>
+      <td style="text-align: left"><img src="./assets/RealsForDemo/这些日子做了多少违背我良心的事.v2.jpeg" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">这些日子做了多少违背我良心的事<span style="color: lightgray;"><small><em>(trans: These days, I’ve done so many things that go against my conscience.)</em></small></span></td>
+      <td style="text-align: left">这些日子做了多少违背我良心的事<span style="color: lightgray;"><small><em>(trans: These days, I’ve done so many things that go against my conscience.)</em></small></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/这些日子做了多少违背我良心的事.v1.wav" type="audio/mpeg" /></audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./assets/RealsForDemo/这些日子做了多少违背我良心的事.v1.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>transcript</th>
+      <th>speech</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="./assets/RealsForDemo/%E5%90%84%E4%BD%8D%E8%A7%82%E4%BC%97%EF%BC%8C%E6%99%9A%E4%B8%8A%E5%A5%BD%EF%BC%8C%E4%BB%8A%E5%A4%A9%E6%98%AF2021%E5%B9%B41%E6%9C%8813%E6%97%A5%EF%BC%8C%E5%86%9C%E5%8E%86%E8%85%8A%E6%9C%88%E5%88%9D%E4%B8%80.png" alt="1" /></td>
+      <td>各位观众，晚上好，今天是2021年1月13日，农历腊月初一<span style="color: lightgray;"><small><em>(trans: Good evening, everyone. Today is January 13, 2021, the first day of the twelfth lunar month.)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/RealsForDemo/各位观众，晚上好，今天是2021年1月13日，农历腊月初一.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/RealsForDemo/%E5%93%8E%E5%93%9F%EF%BC%8C%E6%80%8E%E4%B9%88%E4%BC%9A%E8%BF%99%E6%A0%B7%E5%98%9B.v1.jpeg" alt="2" /></td>
+      <td>哎哟，怎么会这样嘛<span style="color: lightgray;"><small><em>(trans: Oh no, how could this happen?)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/RealsForDemo/哎哟，怎么会这样嘛.v1.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+    <tr>
+      <td><img src="./assets/RealsForDemo/%E6%88%91%E4%BB%AC%E4%BB%8A%E5%A4%A9%E7%9A%84%E4%B8%AD%E5%9B%BD%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%A6%81%E4%B8%8E%E6%97%B6%E4%BF%B1%E8%BF%9B%EF%BC%81.jpeg" alt="3" /></td>
+      <td>我们今天的中国，就是要与时俱进！<span style="color: lightgray;"><small><em>(trans: Today’s China must keep pace with the times!)</em></small></span></td>
+      <td><audio controls=""><source src="./assets/RealsForDemo/我们今天的中国，就是要与时俱进！.wav" type="audio/mpeg" /></audio></td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="emoji-refined"><a href="#case-emoji"></a>Emoji-Refined</h2>
 
