@@ -66,6 +66,11 @@
 
 <h1 id="snaptalk-dataset"><a href="#snaptalk-dataset"></a><span style="font-variant: small-caps;">SnapTalk</span> Dataset</h1>
 
+<h2 id="-dataset-visualization"><a href="#dataset-visulization"></a> Dataset Visualization</h2>
+<p>Here we present the visualization of our dataset <span style="font-variant: small-caps;">SnapTalk</span> on the distribution of: body posture (a.k.a. Fig.5(a)), scene (a.k.a. Fig.5(b)), langauge, gender, age, and emotion.</p>
+
+<p><img src="./assets/dataset_vis/dataset-visualization.png" /></p>
+
 <p>The following are the random samples from our dataset <span style="font-variant: small-caps;">SnapTalk</span>.</p>
 
 <div class="table-container">
@@ -697,6 +702,55 @@ Finally, we present the results of <a href="#ablation-study">ablation study</a>.
   </tr>
 </table>
 
+<h2 id="-compared-to-vanilla-tts"><a href="#Compared to Vanilla TTS"></a> Compared to Vanilla TTS</h2>
+
+<p>In this section, we compare the proposed SnapTalker framework with the vanilla TTS model. We take CosyVoice as the representative for vanilla TTS model.</p>
+
+<p><img src="./assets/case_study/vanilla-TTS/case_vanilla.png" alt="" /></p>
+
+<p>From the comparison, we can observe that the SnapTalker framework generates speech that is more closely aligned with the visual context. However, due to the limitations of the VITS backbone, the SnapTalker framework may not generate inter-word pauses as effectively as the vanilla TTS model, which could impact the naturalness of the speech.</p>
+
+<p>The following are the samples of this comparison.</p>
+<table>
+  <tr>
+    <th>#</th>
+    <th>We were going to take the shortcut onto the brightside and as we were turning.</th>
+  </tr>
+
+  <tr>
+    <td>Vanilla-TTS(CosyVoice)</td>
+    <td>
+      <audio controls=""><source src="./assets/case_study/vanilla-TTS/EN-vanilla.wav" type="audio/mpeg" /></audio>
+    </td>
+  </tr>
+
+  <tr>
+    <td>SnapTalker</td>
+    <td>
+      <img src="./assets/case_study/vanilla-TTS/joy.png" style="height:200px; width:auto;" />
+      <br />
+      <audio controls=""><source src="./assets/case_study/vanilla-TTS/joy.wav" type="audio/mpeg" /></audio>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SnapTalker</td>
+    <td>
+      <img src="./assets/case_study/vanilla-TTS/neutral.png" style="height:200px; width:auto;" />
+      <br />
+      <audio controls=""><source src="./assets/case_study/vanilla-TTS/neutral.wav" type="audio/mpeg" /></audio>
+    </td>
+  </tr>
+</table>
+
+<h1 id="-appendix-content"><a href="#appendix"></a> Appendix Content</h1>
+
+<h2 id="-appendix-a-intra-domain-testset"><a href="#appendix-1"></a> Appendix A: Intra-domain Testset</h2>
+<p><img src="./assets/dataset_vis/testset-visualization.png" alt="" /></p>
+
+<h2 id="-appendix-b-out-of-domain-testset"><a href="#appendix-2"></a> Appendix B: Out-of-domain Testset</h2>
+<p>The out-of-domain testset are collected from the Internet, and the emotion, age distribution of the out-of-domain testset are more balanced than the intra-domain testset.
+<img src="./assets/dataset_vis/out-of-domain-visualization.png" alt="" /></p>
 
 
       <footer class="site-footer">
